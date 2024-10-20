@@ -26,7 +26,7 @@ body {
 }
 
 #card, #card-front, #card-inside {
-  height: 780px;
+  height: 700px;
 }
 
 .wrap {
@@ -37,8 +37,8 @@ body {
 }
 
 #card-front, #card-inside {
-  margin-left: 100px;
-  width: 80%;
+  margin-left: -8px;
+  width: 72%;
   -webkit-box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.25), 0 0 1px rgba(0, 0, 0, 0.5);
   position: absolute;
@@ -54,20 +54,20 @@ body {
 
 .button-inside {
   position: absolute;
-  left: 60.4%;
-  top: 40%;
+  left: 49.2%;
+  top: 55%;
 }
 
 .gift-container {
   position: absolute;
   left: 87%;
-  top: 40%;
+  top: 45%;
 }
 
 .button-gift {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   color: white; /* Màu chữ */
-  width: 768px;
+  width: 692px;
   height: 100px;
   border: none;
   font-size: 20px; /* Kích thước chữ */
@@ -98,7 +98,7 @@ body {
   display: flex; /* Sử dụng flexbox để sắp xếp ngang hàng */
   justify-content: space-around; /* Khoảng cách giữa các món quà */
   margin-top: 200px;
-  margin-left: -190px; /* Khoảng cách trên giữa nút và các món quà */
+  margin-left: -310px; /* Khoảng cách trên giữa nút và các món quà */
 }
 
 .gift-item {
@@ -202,7 +202,7 @@ img {
 }
 
 #card-inside {
-  font-size: 1.3em;
+  font-size: 1.5em;
   line-height: 1.4;
   font-family: 'Lobster';
   color: #331717;

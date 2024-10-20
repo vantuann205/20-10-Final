@@ -23,7 +23,7 @@
 			<div id="card-inside">
 				<div class="wrap">
 					<center><p><b><u>Happy Vietnamese Women's Day</b></u></p><center>
-					<p> Nhân ngày Phụ nữ Việt Nam 20/10, em xin gửi đến chị Trinh những lời chúc tốt đẹp nhất! Chúc chị luôn mạnh mẽ, tự tin và thành công trong cuộc sống.  &nbsp;<i class="em-svg em-blush"></i></p>
+					<p> Nhân ngày Phụ nữ Việt Nam 20/10, em xin gửi đến chị Trinh những lời chúc tốt đẹp nhất! Chúc chị luôn mạnh mẽ, tự tin và thành công trong cuộc sống.&nbsp;<i class="em-svg em-blush"></i></p>
 					<p> Ngày hôm nay, hy vọng chị sẽ được tận hưởng những điều tốt đẹp và ý nghĩa từ những người xung quanh. Chúc chị luôn giữ được sức khỏe, niềm vui và nụ cười rạng rỡ, ngày càng kiếm được nhiều tiền hơn ! </p> 	
 				</div>
 			</div>
@@ -66,56 +66,42 @@
 				}
 			
 				function formatNumber(value) {
-					return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.'); // Thêm dấu chấm
+					return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 				}
 			
 				document.querySelectorAll('.gift-item').forEach((item, itemIndex) => {
 					item.addEventListener('click', () => {
-						// Ẩn tất cả các giá trị quà
 						document.querySelectorAll('.gift-value').forEach(value => {
 							value.style.display = 'none';
 						});
 			
-						// Tạo giá trị ngẫu nhiên cho món quà được chọn (10.000 hoặc 20.000)
-						const randomValue = Math.random() < 0.5 ? '10.000' : '20.000'; // 50% xác suất chọn 10 hoặc 20
+						const randomValue = Math.random() < 0.5 ? '10.000' : '20.000';
 						const selectedValueElement = item.querySelector('.gift-value');
 						selectedValueElement.textContent = `Chúc mừng bạn nhận ${randomValue} VNĐ`;
 						selectedValueElement.style.display = 'block';
-			
-						// Chuyển đổi giá trị đã chọn sang số
-						const valueAsNumber = parseFloat(randomValue.replace('.', '').replace(',', '.')); // Chuyển đổi sang số (10.000 thành 10000)
-						const totalValue = randomValue == '10.000' ? valueAsNumber + 10000 : valueAsNumber - 10000; // Cộng thêm 10.000 nếu chọn 10.000
+
+						const valueAsNumber = parseFloat(randomValue.replace('.', '').replace(',', '.'));
+						const totalValue = randomValue == '10.000' ? valueAsNumber + 10000 : valueAsNumber - 10000; 
 						const formattedValue = formatNumber(totalValue);
 			
-						// Đặt thời gian để hiển thị giá trị cho các món quà còn lại sau 2 giây
 						setTimeout(() => {
-							// Các giá trị cho các món quà còn lại
 							const remainingValues = [formattedValue ,'50.000', '70.000', '100.000'];
 			
-							// Xáo trộn các giá trị còn lại
 							const shuffledValues = shuffleArray(remainingValues);
 			
-							// Hiện giá trị cho tất cả các món quà
 							document.querySelectorAll('.gift-value').forEach((valueElement, index) => {
 								if (index === itemIndex) {
-									valueElement.textContent = `Chúc mừng bạn nhận ${randomValue} VNĐ`; // Giữ giá trị cho món quà đã chọn
+									valueElement.textContent = `Chúc mừng bạn nhận ${randomValue} VNĐ`; 
 								} else {
-									const remainingValue = shuffledValues[index < itemIndex ? index : index - 1]; // Chọn giá trị từ shuffledValues
-									valueElement.textContent = `Giá trị: ${remainingValue} VNĐ`; // Hiển thị giá trị đã xáo trộn
+									const remainingValue = shuffledValues[index < itemIndex ? index : index - 1]; 
+									valueElement.textContent = `Giá trị: ${remainingValue} VNĐ`; 
 								}
-								valueElement.style.display = 'block'; // Hiện tất cả các giá trị
+								valueElement.style.display = 'block'; 
 							});
-						}, 2000); // 2000 milliseconds = 2 seconds
+						}, 3000);
 					});
 				});
 			</script>
-			
-			
-			
-			
-			
-						
-	
 			
 			<div id="card-front">
 				<div class="wrap">
